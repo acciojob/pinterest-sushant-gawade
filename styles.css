@@ -1,1 +1,108 @@
 /*  your css code here. If applicable */
+/* General Resets and Font Setup */
+body {
+    margin: 0;
+    padding: 0;
+    /* Using a serif font for the main titles, similar to the example */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f8f8; /* Light background for the overall page */
+}
+
+/* 1. Container Styles (class: hero) */
+.hero {
+    /* Required properties: display, justify-content, align-items */
+    display: flex;
+    justify-content: center; /* Center the two main blocks */
+    align-items: center;
+    
+    /* Overall size and layout for the hero section */
+    max-width: 1200px;
+    margin: 50px auto; /* Center the hero component on the page */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px; /* Optional: adds a nice touch */
+    overflow: hidden; /* Important for containing the image border-radius */
+}
+
+/* 2. Image and Image Container Styles */
+.hero-image-container {
+    /* Takes up 2/3 of the container width */
+    flex: 2; 
+    min-width: 50%; /* Ensures it doesn't shrink too much */
+    max-height: 450px; /* Constrain height */
+}
+
+.hero-image {
+    /* Required properties: width, height, object-fit */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    display: block; /* Removes any default bottom spacing for inline images */
+}
+
+/* 3. Text and CTA Content Styles */
+.hero-content {
+    /* Takes up 1/3 of the container width */
+    flex: 1; 
+    padding: 40px;
+    text-align: center;
+    min-width: 300px; /* Ensures text area is readable */
+}
+
+.hero-content h1 {
+    /* Specific styling for the main title, using a serif font */
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* 4. 'Explore now' Button/Link Styles (class: btn-explore) */
+.btn-explore {
+    /* Required properties: padding, background-color, color, border-radius */
+    padding: 10px 25px;
+    background-color: #e60023; /* Pinterest Red */
+    color: white;
+    border-radius: 20px; /* Gives it a pill-shaped look */
+    
+    /* Other necessary styles */
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block; /* Allows padding and width/height to be set */
+    transition: background-color 0.2s;
+}
+
+.btn-explore:hover {
+    background-color: #ad081b; /* Darker red on hover */
+}
+
+/* Optional: Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack the image and text vertically */
+        margin: 20px;
+    }
+
+    .hero-image-container {
+        /* On small screens, the image takes the full width */
+        min-width: 100%;
+        max-height: 300px; /* Adjust height for mobile view */
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+        min-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+}
